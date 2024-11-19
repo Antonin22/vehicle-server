@@ -1,9 +1,11 @@
 name: Bonjour
+run-name: ${{ github.actor }} is testing out GitHub Actions
 on:
   - push
 jobs:
   dire_bonjour:
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@v4
       - run: ls -l
       - run: cat README.md
