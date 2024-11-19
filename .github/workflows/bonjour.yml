@@ -8,4 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: ls -l
+      - run: sudo apt update
+      - run: sudo apt install cowsay
       - run: cat README.md | cowsay
