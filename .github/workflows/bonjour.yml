@@ -9,6 +9,13 @@ jobs:
         image: ghcr.io/cicd-lectures/gitpod:latest
         options: --user=root
     steps:
+      - name: read README.md
+        id: readme
+        uses: Code-Hex/neo-cowsay-action@v1
+        with:
+          path: ./README.md
+      - name: Echo README.md
+        run: echo "${{ steps.readme.outputs.cowsay }}"
       - uses: actions/checkout@v4
       - run: ls -l
       - run: sudo apt update
