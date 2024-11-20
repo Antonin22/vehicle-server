@@ -63,6 +63,7 @@ export class VehicleStore {
 
   async deleteVehicle(req: DeleteVehicleRequest): Promise<void> {
     const result = await this.db.query(deleteStatement, [req.id]);
+    
     if (result.rowCount == 0) {
       throw new AppError(
         ErrorCode.RecordNotFound,
