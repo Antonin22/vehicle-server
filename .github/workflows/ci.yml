@@ -12,4 +12,4 @@ jobs:
           node-version: 20.17
       - run: npm ci
       - run: npm run build
-      - run: npm run link
+      - run: npm run lint
